@@ -1,13 +1,3 @@
-/**
-*
-* Cons.C sets up the queue with the following key:
-*                ftok(".", 'Z')
-* and displays characters that are sent by the producer
-* where the message type is 100 removing the queue and
-* exiting once a lowercase q or uppercase Q is received
-*
-*/
-
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
@@ -40,7 +30,7 @@ int main()
         msgrcv(qid, (struct msgbuf *)&msg, SIZE, 100, 0);
         printf("%s", msg.msgBuffer);
     } while (msg.msgBuffer[0] != 'q' || msg.msgBuffer[0] == 'Q'); // Break loop
-
+    
     // Delete the message queue
     msgctl(qid, IPC_RMID, NULL);
     exit(0);
