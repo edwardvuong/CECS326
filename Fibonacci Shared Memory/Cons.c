@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <sys/shm.h>
 #include <sys/stat.h>
+
 #include <sys/mman.h>
 
 int main(){
@@ -11,7 +12,7 @@ int main(){
 	const char *name = "Fibonacci";
 	int shm_fd;
 	void *ptr;
-	shm_fd = shm_open(name, O_RDONLY, 0666); 
+	shm_fd = shm_open(name, O_RDONLY, 0666);
 	if(shm_fd == -1){
 		printf("Shared memory failed\n");
 		exit(-1);

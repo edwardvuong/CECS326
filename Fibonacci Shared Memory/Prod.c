@@ -51,11 +51,10 @@ int main(int argc, char * argv[]){
 		sprintf(ptr, "%s", xy);
 		ptr += strlen(xy);
 
-		if(i == input - 1){
+		if(i == input-1){
 			sprintf(ptr,"\n");
 			return 0;	
 		}
-        
 	sprintf(ptr, ",");
 	ptr += strlen(",");
 	}
